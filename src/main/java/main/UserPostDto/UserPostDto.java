@@ -1,25 +1,16 @@
-package main.models;
+package main.UserPostDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.management.relation.Role;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.Set;
 
-@Entity(name = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+public class UserPostDto {
     private String firstName;
 
     private String lastName;
@@ -27,4 +18,6 @@ public class User {
     private String email;
 
     private String userName;
+
+//    private Set<Role> role;
 }
