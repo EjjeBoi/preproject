@@ -1,7 +1,7 @@
 package main.service;
 
 import lombok.RequiredArgsConstructor;
-import main.UserPostDto.UserPostDto;
+import main.dto.UserPostDto;
 import main.models.User;
 import main.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -24,8 +24,6 @@ public class UserService {
         user.setLastName(dto.getLastName());
         user.setEmail(dto.getEmail());
         user.setUserName(dto.getUserName());
-//        user.setRoles(dto.getRole());
-//        user.setPassword(dto.getPassword());
         return userRepository.save(user);
     }
 
@@ -43,8 +41,6 @@ public class UserService {
         user.setLastName(dto.getLastName());
         user.setEmail(dto.getEmail());
         user.setUserName(dto.getUserName());
-//        user.setRoles(dto.getRole());
-//        user.setPassword(dto.getPassword());
         return userRepository.save(user);
     }
 }

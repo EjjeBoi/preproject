@@ -1,7 +1,7 @@
 package main.controller;
 
 import lombok.RequiredArgsConstructor;
-import main.UserPostDto.UserPostDto;
+import main.dto.UserPostDto;
 import main.models.User;
 import main.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +22,12 @@ public class UserController {
 
     @PostMapping("add")
     public User addUser(@RequestBody UserPostDto dto) {
-       return userService.addUser(dto);
+        return userService.addUser(dto);
     }
 
     @DeleteMapping("delete")
     public void deleteUsers() {
-    userService.deleteAll();
+        userService.deleteAll();
     }
 
     @PutMapping("update/{id}")

@@ -1,11 +1,8 @@
-package main.UserPostDto;
+package main.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.management.relation.Role;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -18,6 +15,4 @@ public class UserPostDto {
     private String email;
 
     private String userName;
-
-//    private Set<Role> role;
 }
