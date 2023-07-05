@@ -3,12 +3,8 @@ package main.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.management.relation.Role;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import main.models.Role;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity(name = "users")
@@ -18,7 +14,7 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String firstName;
 
@@ -27,4 +23,11 @@ public class User {
     private String email;
 
     private String userName;
+    @ManyToMany
+    @JoinTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
+    @Column(nullable = false)
+    private String password;
 }
