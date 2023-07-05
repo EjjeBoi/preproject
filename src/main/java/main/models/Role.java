@@ -18,6 +18,7 @@ public class Role {
     private Long id;
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
 }
