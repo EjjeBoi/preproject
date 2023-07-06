@@ -23,6 +23,7 @@ public class UserDataService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) {
         User user = userRepository.getByUserName(username);
+        System.out.println("Loaded user: " + user);
         return new org.springframework.security.core.userdetails.User(
                 user.getUserName(),
                 user.getPassword(),
